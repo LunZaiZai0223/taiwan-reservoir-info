@@ -1,0 +1,35 @@
+<section>
+  <h3>北部</h3>
+  <div class="chart-wrapper">
+    <ng-container *ngFor="let reservoirItem of northernReservoirList">
+      <app-reservoir-chart
+        [chartData]="reservoirItem.percentage"
+        [reservoirName]="reservoirItem.name"
+      ></app-reservoir-chart>
+    </ng-container>
+  </div>
+</section>
+
+<section>
+  <h3>中部</h3>
+  <div class="chart-wrapper">
+    <ng-container *ngFor="let reservoirItem of middleReservoirList">
+      <app-reservoir-chart
+        [chartData]="reservoirItem.percentage"
+        [reservoirName]="reservoirItem.name"
+      ></app-reservoir-chart>
+    </ng-container>
+  </div>
+</section>
+
+<section>
+  <h3>南部</h3>
+  <div class="chart-wrapper">
+    <ng-container *ngFor="let reservoirItem of southernReservoirList">
+      <app-reservoir-chart
+        [chartData]="reservoirItem.percentage"
+        [reservoirName]="reservoirItem.name"
+      ></app-reservoir-chart>
+    </ng-container>
+  </div>
+</section>
