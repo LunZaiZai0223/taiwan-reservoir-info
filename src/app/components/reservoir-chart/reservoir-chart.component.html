@@ -1,7 +1,11 @@
-<p>reservoir-chart works!</p>
-
 <div id="chart">
-  <div>我是 title</div>
+  <div class="chart-header">
+    <small class="chart-header-subtitle">8 小時前</small>
+    <h3 class="chart-header-title">
+      <span>{{ reservoirName }}</span
+      ><span>{{ chartData[0].toFixed(0) }}%</span>
+    </h3>
+  </div>
   <apx-chart
     [series]="chartOptions.series!"
     [chart]="chartOptions.chart!"
@@ -9,8 +13,6 @@
     [stroke]="chartOptions.stroke!"
     [dataLabels]="chartOptions.dataLabels!"
     [yaxis]="chartOptions.yaxis!"
-    [title]="chartOptions.title!"
-    [subtitle]="chartOptions.subtitle!"
     [states]="chartOptions.states!"
     [tooltip]="chartOptions.tooltip!"
     [responsive]="chartOptions.responsive!"

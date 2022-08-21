@@ -1,0 +1,30 @@
+:host.chart {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  width: calc(100% / 3 - 8px);
+
+  @media screen and (max-width: 768px) {
+    width: calc(100% / 2 - 8px);
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
+}
+
+.chart {
+  &-header {
+    padding: 0 0.25rem;
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    &-subtitle {
+      font-size: 0.7rem;
+      color: #fff;
+    }
+  }
+}
