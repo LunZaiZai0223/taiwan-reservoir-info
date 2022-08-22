@@ -12,8 +12,16 @@ import { ReservoirAreaChartModel } from '../../models/reservoir-area-chart-model
 })
 export class ReservoirChartComponent implements OnChanges, OnInit {
   @ViewChild('chart', { static: true }) chart!: ChartComponent;
+
+  /** 要顯示的資料，最少要兩個 elements */
   @Input() chartData: any[] = [];
+
+  /** 水庫的名字 */
   @Input() reservoirName: string = '';
+
+  /** 更新時間 yyyy-mm-dd hh:ss */
+  @Input() reservoirUpdateTime: string = '';
+
   @HostBinding('class') classes = 'chart';
 
   /**
@@ -23,7 +31,7 @@ export class ReservoirChartComponent implements OnChanges, OnInit {
    */
   color: string = '';
 
-  chartOptions!: Partial<ReservoirAreaChartModel>;
+  chartOptions: Partial<ReservoirAreaChartModel> = {};
 
   constructor() {}
 

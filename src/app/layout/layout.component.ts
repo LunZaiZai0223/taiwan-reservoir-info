@@ -32,6 +32,8 @@ export class LayoutComponent implements OnInit {
           return Object.values(response)
             .filter(item => typeof item === 'object')
             .map(item => {
+              const [date, tempTime]: string[] = item.updateAt.split('(');
+              const formattedTime: string = tempTime.replace('時)', ':00');
               const [idNum]: number[] = item.id.match(/\d+/g)!.map(num => +num);
               let area: string = '';
               for (const item of RESERVOIR_AREA_BY_ID) {
@@ -41,7 +43,12 @@ export class LayoutComponent implements OnInit {
                 }
               }
 
-              return { ...item, percentage: [+item.percentage, +item.percentage], area };
+              return {
+                ...item,
+                percentage: [+item.percentage, +item.percentage],
+                area,
+                pureTime: `${date} ${formattedTime}`,
+              };
             });
         })
       )
