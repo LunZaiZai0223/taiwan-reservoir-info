@@ -1,6 +1,6 @@
 <div id="chart">
   <div class="chart-header">
-    <small class="chart-header-subtitle">8 小時前</small>
+    <small class="chart-header-subtitle">{{ reservoirUpdateTime | dateAgo }}</small>
     <h3 class="chart-header-title">
       <span>{{ reservoirName }}</span
       ><span>{{ chartData[0].toFixed(0) }}%</span>
