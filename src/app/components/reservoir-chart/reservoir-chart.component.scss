@@ -3,6 +3,13 @@
   border-radius: 12px;
   width: calc(100% / 3 - 8px);
   overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 0.85rem;
+  transition: transform 0.2s ease-in;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+  }
 
   @media screen and (max-width: 768px) {
     width: calc(100% / 2 - 8px);
@@ -15,7 +22,7 @@
 
 .chart {
   &-header {
-    padding: 0 0.25rem;
+    padding: 0 0.5rem 0.25rem;
 
     &-title {
       display: flex;

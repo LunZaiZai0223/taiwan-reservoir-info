@@ -23,6 +23,8 @@ export class ChartListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.reservoirService.onReservoirData().subscribe(data => {
+      // 防止 BehaviorSubject 的初始值 null
+      if (data === null) return;
       this.areaList.forEach(area => {
         this.setReservoirListByArea(area, data);
       });
