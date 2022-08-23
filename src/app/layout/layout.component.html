@@ -1,5 +1,9 @@
-<app-header></app-header>
-<div class="container p-3 pl-1">
-  <app-chart-list></app-chart-list>
+<div class="layout-body">
+  <app-header></app-header>
+  <main>
+    <div class="container p-3 pl-1">
+      <router-outlet> </router-outlet>
+    </div>
+  </main>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>

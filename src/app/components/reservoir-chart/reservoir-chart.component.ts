@@ -22,6 +22,9 @@ export class ReservoirChartComponent implements OnChanges, OnInit {
   /** 更新時間 yyyy-mm-dd hh:ss */
   @Input() reservoirUpdateTime: string = '';
 
+  /** 水庫 id */
+  @Input() reservoirId: string = '';
+
   @HostBinding('class') classes = 'chart';
 
   /**

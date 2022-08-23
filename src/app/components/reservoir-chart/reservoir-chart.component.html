@@ -1,24 +1,26 @@
-<div id="chart">
-  <div class="chart-header">
-    <small class="chart-header-subtitle">{{ reservoirUpdateTime | dateAgo }}</small>
-    <h3 class="chart-header-title">
-      <span>{{ reservoirName }}</span
-      ><span>{{ chartData[0].toFixed(0) }}%</span>
-    </h3>
+<a [routerLink]="[reservoirId]">
+  <div id="chart">
+    <div class="chart-header">
+      <small class="chart-header-subtitle">{{ reservoirUpdateTime | dateAgo }}</small>
+      <h3 class="chart-header-title">
+        <span>{{ reservoirName }}</span
+        ><span>{{ chartData[0].toFixed(1) }}%</span>
+      </h3>
+    </div>
+    <apx-chart
+      [series]="chartOptions.series!"
+      [chart]="chartOptions.chart!"
+      [xaxis]="chartOptions.xaxis!"
+      [stroke]="chartOptions.stroke!"
+      [dataLabels]="chartOptions.dataLabels!"
+      [yaxis]="chartOptions.yaxis!"
+      [states]="chartOptions.states!"
+      [tooltip]="chartOptions.tooltip!"
+      [responsive]="chartOptions.responsive!"
+      [grid]="chartOptions.grid!"
+      [theme]="chartOptions.theme!"
+      [colors]="chartOptions.colors!"
+    >
+    </apx-chart>
   </div>
-  <apx-chart
-    [series]="chartOptions.series!"
-    [chart]="chartOptions.chart!"
-    [xaxis]="chartOptions.xaxis!"
-    [stroke]="chartOptions.stroke!"
-    [dataLabels]="chartOptions.dataLabels!"
-    [yaxis]="chartOptions.yaxis!"
-    [states]="chartOptions.states!"
-    [tooltip]="chartOptions.tooltip!"
-    [responsive]="chartOptions.responsive!"
-    [grid]="chartOptions.grid!"
-    [theme]="chartOptions.theme!"
-    [colors]="chartOptions.colors!"
-  >
-  </apx-chart>
-</div>
+</a>

@@ -6,9 +6,9 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+
+  a {
+    text-decoration: none;
+  }
 }
 
-.area-title {
-  margin: 1rem 0;
-  color: #fff;
-}
