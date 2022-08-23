@@ -5,16 +5,17 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { GetReservoir } from '../models/GetReservoir.model';
+import { RESERVOIR_AREA_BY_ID } from '../constant/reservoir/reservoir-area-by-id.constant';
+import { SessionStorageService } from './session-storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ReservoirService {
   reservoirList: GetReservoir[] = [];
-
   reservoirBehaviorSubject$: BehaviorSubject<any> = new BehaviorSubject(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private sessionStorageService: SessionStorageService) {}
 
   getReservoirDetail(): Observable<GetReservoir[]> {
     return this.http.get<GetReservoir[]>(`${environment.detailApiUrl}`);
@@ -26,11 +27,42 @@ export class ReservoirService {
 
   setReservoirList(data: any): void {
     this.reservoirList = data;
-    console.log(this.reservoirList);
   }
 
   sendReservoirData(): void {
     this.reservoirBehaviorSubject$.next(this.reservoirList);
+  }
+
+  cleanAndStoreReservoirData(rawData: GetReservoir[]): void {
+    const cleanedData = Object.values(rawData)
+      .filter(item => typeof item === 'object')
+      .map(item => {
+        const [date, tempTime]: string[] = item.updateAt.split('(');
+        const formattedTime: string = tempTime.replace('時)', ':00');
+        const [idNum]: number[] = item.id.match(/\d+/g)!.map(num => +num);
+        let area: string = '';
+        for (const item of RESERVOIR_AREA_BY_ID) {
+          if (item.idList.includes(idNum)) {
+            area = item.area;
+            break;
+          }
+        }
+
+        return {
+          ...item,
+          percentage: [+item.percentage, +item.percentage],
+          area,
+          pureTime: `${date} ${formattedTime}`,
+        };
+      });
+
+    this.setReservoirList(cleanedData);
+    this.sessionStorageService.setSessionStorage({ key: 'reservoir', value: cleanedData });
+    this.sendReservoirData();
+  }
+
+  getReservoirItemById(reservoirId: string): GetReservoir | undefined {
+    return this.reservoirList.find(item => item.id === reservoirId);
   }
 }
 
