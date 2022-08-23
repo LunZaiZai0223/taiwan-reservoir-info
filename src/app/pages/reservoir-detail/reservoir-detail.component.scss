@@ -1,0 +1,23 @@
+.subtitle {
+  color: White;
+  margin: 1.5rem 0;
+}
+
+.card-wrapper {
+  color: White;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .card {
+    width: calc(100% / 3 - 8px);
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: 768px) {
+      width: calc(100% / 2 - 8px);
+    }
+  }
+}

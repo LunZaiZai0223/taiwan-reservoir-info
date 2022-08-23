@@ -12,9 +12,19 @@ import { ChartListComponent } from './pages/chart-list/chart-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { ReservoirDetailComponent } from './pages/reservoir-detail/reservoir-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, ReservoirChartComponent, ChartListComponent, HeaderComponent, FooterComponent, DateAgoPipe],
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    ReservoirChartComponent,
+    ChartListComponent,
+    HeaderComponent,
+    FooterComponent,
+    DateAgoPipe,
+    ReservoirDetailComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgApexchartsModule],
   providers: [],
   bootstrap: [AppComponent],
