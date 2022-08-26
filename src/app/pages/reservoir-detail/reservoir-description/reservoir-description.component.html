@@ -1,0 +1,19 @@
+<section class="reservoir-description">
+  <h3>水庫簡介</h3>
+  <div class="content-wrapper">
+    <div class="location-image-wrapper">
+      <img [src]="reservoirDetail.locationImgPath" />
+      <div class="image-caption-wrapper">
+        <small>水庫位置圖</small>
+      </div>
+    </div>
+    <div>
+      <div>
+        <h3 class="description-title">{{ reservoirName }}</h3>
+      </div>
+      <p>
+        {{ reservoirDetail.descriptionTw }}
+      </p>
+    </div>
+  </div>
+</section>

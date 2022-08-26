@@ -1,0 +1,68 @@
+.reservoir-description {
+  background-color: #292d3e;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: White;
+  margin: 1rem 0;
+
+  h3 {
+    margin: 1rem 0;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 1rem;
+  border-radius: 0.4rem;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.location-image-wrapper {
+  border-radius: 0.4rem;
+
+  @media screen and (max-width: 768px) {
+    height: 200px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.4rem;
+
+    @media screen and (max-width: 768px) {
+      height: 90%;
+      object-fit: contain;
+    }
+  }
+}
+
+.image-caption-wrapper {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.description-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0.5rem !important;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    flex: 1;
+    height: 1px;
+    border-bottom: solid 1px White;
+    margin: 0 5px;
+  }
+}
