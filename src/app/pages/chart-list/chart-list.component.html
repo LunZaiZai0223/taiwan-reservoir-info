@@ -1,4 +1,4 @@
-<section>
+<section class="list-wrapper" [ngClass]="{ 'list-wrapper-active': northernReservoirList.length > 0 }">
   <h2 class="area-title">北部</h2>
   <div class="chart-wrapper">
     <ng-container *ngFor="let reservoirItem of northernReservoirList">
@@ -12,7 +12,7 @@
   </div>
 </section>
 
-<section>
+<section class="list-wrapper" [ngClass]="{ 'list-wrapper-active': middleReservoirList.length }">
   <h2 class="area-title">中部</h2>
   <div class="chart-wrapper">
     <ng-container *ngFor="let reservoirItem of middleReservoirList">
@@ -26,7 +26,7 @@
   </div>
 </section>
 
-<section>
+<section class="list-wrapper" [ngClass]="{ 'list-wrapper-active': southernReservoirList.length }">
   <h2 class="area-title">南部</h2>
   <div class="chart-wrapper">
     <ng-container *ngFor="let reservoirItem of southernReservoirList">

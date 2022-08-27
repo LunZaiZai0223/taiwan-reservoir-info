@@ -1,14 +1,22 @@
 section {
   padding-bottom: 1rem;
-}
 
-.chart-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  .chart-wrapper {
+    display: flex;
+    flex-wrap: wrap;
 
-  a {
-    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
   }
 }
 
+.list-wrapper {
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: transform 0.5s ease-in, visibility 0.5s ease-in;
+  &-active {
+    transform: translateY(0px);
+    visibility: initial;
+  }
+}
