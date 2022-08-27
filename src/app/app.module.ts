@@ -13,6 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { ReservoirDetailComponent } from './pages/reservoir-detail/reservoir-detail.component';
+import { ReservoirDescriptionComponent } from './pages/reservoir-detail/reservoir-description/reservoir-description.component';
+import { OverlayComponent } from './components/overlay/overlay.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ReservoirDetailComponent } from './pages/reservoir-detail/reservoir-det
     FooterComponent,
     DateAgoPipe,
     ReservoirDetailComponent,
+    ReservoirDescriptionComponent,
+    OverlayComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgApexchartsModule],
   providers: [],
