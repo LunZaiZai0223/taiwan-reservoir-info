@@ -25,6 +25,21 @@ export class ReservoirService {
     return this.reservoirBehaviorSubject$.asObservable();
   }
 
+  /**
+   * 回傳可以用的 properties:
+   * CatchmentAreaRainfall -> 前一日累積降雨量[單位為毫米]
+   * DeadStorageLevel -> 呆水位（公尺）
+   * OutflowDischarge -> 排洪道流量（萬立方公尺）
+   */
+  // getReservoirAdditionalData(): Observable<any> {
+  //   return this.http.get<any>(
+  //     'https://data.wra.gov.tw/OpenAPI/api/OpenData/50C8256D-30C5-4B8D-9B84-2E14D5C6DF71/Data',
+  //     {
+  //       params: new HttpParams().append('size', '100').append('page', '1'),
+  //     }
+  //   );
+  // }
+
   setReservoirList(data: any): void {
     this.reservoirList = data;
   }
