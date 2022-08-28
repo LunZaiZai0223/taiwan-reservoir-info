@@ -1,19 +1,49 @@
 <section class="reservoir-description">
-  <h3>水庫簡介</h3>
-  <div class="content-wrapper">
+  <h3>{{ 'RESERVOIR_INTRODUCTION' | translate }}</h3>
+  <div class="content-wrapper skeleton" #skeletonWrapper>
     <div class="location-image-wrapper">
-      <img [src]="reservoirDetail.locationImgPath" />
+      <img [src]="reservoirDetail.locationImgPath" (load)="onPageIsLoaded()" />
       <div class="image-caption-wrapper">
-        <small>水庫位置圖</small>
+        <ng-container *ngIf="!isSkeletonActive; else isLoading">
+          <small>{{ 'LOCATION_OF_RESERVOIR' | translate }}</small>
+        </ng-container>
+        <ng-template #isLoading>
+          <small class="skeleton-text"></small>
+        </ng-template>
       </div>
     </div>
-    <div>
+    <div class="content">
       <div>
-        <h3 class="description-title">{{ reservoirName }}</h3>
+        <ng-container *ngIf="!isSkeletonActive; else isLoading">
+          <h3 class="description-title">{{ reservoirViewName }}</h3>
+        </ng-container>
+        <ng-template #isLoading>
+          <div class="skeleton-text"></div>
+        </ng-template>
       </div>
-      <p>
-        {{ reservoirDetail.descriptionTw }}
-      </p>
+
+      <ng-container *ngIf="!isSkeletonActive">
+        <ng-container *ngIf="currentLang === 'zh-tw'; else isLangEn">
+          <p>
+            {{ reservoirDetail.descriptionTw }}
+          </p>
+        </ng-container>
+        <ng-template #isLangEn>
+          <p>
+            {{ reservoirDetail.descriptionEn }}
+          </p>
+        </ng-template>
+      </ng-container>
+
+      <ng-container *ngIf="isSkeletonActive">
+        <div class="skeleton" [style.marginTop.px]="10">
+          <div class="skeleton-text"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-text"></div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </section>

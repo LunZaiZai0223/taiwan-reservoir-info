@@ -30,6 +30,14 @@
       display: flex;
       justify-content: space-between;
       color: var(--color);
+
+      // 避免英文版時水庫名稱太長造成圖表破圖，所以超過一行就 ...
+      &-left {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
     }
 
     &-subtitle {

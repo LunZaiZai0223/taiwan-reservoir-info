@@ -11,4 +11,5 @@ export interface GetReservoir {
   volumn: string; // 有效蓄水量（萬立方公尺）
   area?: string; // 地區
   pureTime?: string; // 整理好的時間（從 yyyy-mm-dd(X時) 變成 yyyy-mm-dd hh:ss）
+  nameEn?: string;
 }

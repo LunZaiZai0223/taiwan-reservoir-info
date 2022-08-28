@@ -1,7 +1,10 @@
 <div class="layout-body">
+  <ng-container *ngIf="isOverlayActive">
+    <app-overlay></app-overlay>
+  </ng-container>
   <app-header></app-header>
   <main>
-    <div class="container p-3 pl-1">
+    <div class="container container-padding">
       <router-outlet> </router-outlet>
     </div>
   </main>

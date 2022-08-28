@@ -11,6 +11,7 @@
   --clr-section-bg: #292d3e;
 }
 
+// 用 style class 決定黑暗/光明模式下的變數為何
 .light {
   --bg: var(--clr-light);
   --bg-nav: var(--clr-light);

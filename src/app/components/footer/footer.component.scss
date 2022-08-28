@@ -7,4 +7,13 @@ footer {
 .footer-content {
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 450px) {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  a {
+    color: var(--color);
+  }
 }

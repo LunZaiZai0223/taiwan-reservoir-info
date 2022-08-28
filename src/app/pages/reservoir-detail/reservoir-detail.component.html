@@ -1,38 +1,32 @@
-<h2 class="area-title">{{ reservoirDetail.name }}</h2>
-<h4 class="subtitle">最新資料</h4>
-<section class="card-wrapper">
-  <div class="card">
-    <p class="card-desc">上次更新</p>
-    <h3>{{ reservoirDetail.pureTime | dateAgo }}</h3>
-  </div>
-  <div class="card">
-    <p class="card-desc">今日進水量</p>
-    <h3>{{ reservoirDetail.daliyInflow }} 萬立方公尺</h3>
-  </div>
-  <div class="card">
-    <p class="card-desc">今日出水量</p>
-    <h3>{{ reservoirDetail.daliyOverflow }} 萬立方公尺</h3>
-  </div>
-  <div class="card">
-    <p class="card-desc">有效容量</p>
-    <h3>{{ reservoirDetail.baseAvailable }} 萬立方公尺</h3>
-  </div>
-  <div class="card">
-    <p class="card-desc">當前有效蓄水量</p>
-    <h3>{{ reservoirDetail.volumn }} 萬立方公尺</h3>
-  </div>
-  <div class="card">
-    <p class="card-desc">當前有效蓄水量百分比</p>
-    <h3>{{ reservoirDetail.percentage[0].toFixed(1) }}%</h3>
-  </div>
-</section>
+<ng-container *ngIf="canShow">
+  <h2 class="area-title">{{ currentLang === 'zh-tw' ? reservoirDetail.name : reservoirDetail.nameEn }}</h2>
+  <h4 class="subtitle">{{ 'NEWEST_INFO' | translate }}</h4>
+  <section class="card-wrapper">
+    <div class="card">
+      <p class="card-desc">{{ 'LAST_UPDATE' | translate }}</p>
+      <h3>{{ reservoirDetail.pureTime | dateAgo }}</h3>
+    </div>
+    <div class="card">
+      <p class="card-desc">{{ 'DAILY_INFLOW' | translate }}</p>
+      <h3>{{ reservoirDetail.daliyInflow }} {{ 'TEN_THOUSAND' | translate }}</h3>
+    </div>
+    <div class="card">
+      <p class="card-desc">{{ 'DAILY_OUTFLOW' | translate }}</p>
+      <h3>{{ reservoirDetail.daliyOverflow }} {{ 'TEN_THOUSAND' | translate }}</h3>
+    </div>
+    <div class="card">
+      <p class="card-desc">{{ 'EFFECTIVE_CAPACITY' | translate }}</p>
+      <h3>{{ reservoirDetail.baseAvailable }} {{ 'TEN_THOUSAND' | translate }}</h3>
+    </div>
+    <div class="card">
+      <p class="card-desc">{{ 'CURRENT_STORAGE_CAPACITY' | translate }}</p>
+      <h3>{{ reservoirDetail.volumn }} {{ 'TEN_THOUSAND' | translate }}</h3>
+    </div>
+    <div class="card">
+      <p class="card-desc">{{ 'CURRENT_STORAGE_CAPACITY_PERCENTAGE' | translate }}</p>
+      <h3>{{ reservoirDetail.percentage[0].toFixed(1) }}%</h3>
+    </div>
+  </section>
 
-<!-- * baseAvailable: 有效容量 -->
-<!-- * daliyInflow: 今日進水量 -->
-<!-- * daliyNetflow: 53.56999999999999 -->
-<!-- * daliyOverflow: 今日出水量 -->
-<!-- * id: "reservoir2" -->
-<!-- * name: "石門水庫" -->
-<!-- * percentage: 水庫當前蓄水百分比 -->
-<!-- * updateAt: "2022-08-19(13時)" -->
-<!-- * volumn: 有效蓄水量（萬立方公尺） -->
+  <app-reservoir-description [reservoirName]="reservoirDetail.name"></app-reservoir-description>
+</ng-container>

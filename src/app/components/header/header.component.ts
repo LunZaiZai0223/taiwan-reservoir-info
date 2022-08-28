@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,19 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 export class HeaderComponent implements OnInit {
   currentMode: string = 'dark';
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.setBodyModeClass();
   }
 
   onSwitchMode(mode: string): void {
-    console.log(mode);
     this.currentMode = mode;
     this.setBodyModeClass();
+  }
+
+  onSwitchLang(): void {
+    this.translate.use(this.translate.currentLang === 'zh-tw' ? 'en' : 'zh-tw');
   }
 
   private setBodyModeClass(): void {
