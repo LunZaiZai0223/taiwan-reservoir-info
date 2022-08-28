@@ -1,9 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Pipe({
   name: 'dateAgo',
+  // 更換語系的時候也可以再執行一次 pipe
+  pure: false,
 })
 export class DateAgoPipe implements PipeTransform {
+  constructor(private translateService: TranslateService) {}
+
   transform(value: any): any {
     if (value) {
       const seconds = Math.floor((+new Date() - +new Date(value)) / 1000);
@@ -22,14 +27,13 @@ export class DateAgoPipe implements PipeTransform {
       let counter;
       // 跑物件的迴圈，如果符合條件就會 return，終止 for...in loop 物件
       for (const i in intervals) {
-        // TODO: 最後 i18n 從這邊喬
         counter = Math.floor(seconds / intervals[i]);
         if (i === 'hour') {
           if (counter > 0) {
-            return `${counter} 小時前`;
+            return this.translateService.currentLang === 'zh-tw' ? `${counter} 小時前` : `${counter} hours ago`;
           }
           if (counter === 0) {
-            return `1 小時內`;
+            return this.translateService.currentLang === 'zh-tw' ? '1 小時內' : 'within an hour';
           }
         }
       }
