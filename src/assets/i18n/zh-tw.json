@@ -14,5 +14,7 @@
   "TEN_THOUSAND": "萬立方公尺",
   "RESERVOIR_INTRODUCTION": "水庫簡介",
   "LOCATION_OF_RESERVOIR": "水庫位置圖",
-  "INSPIRED_BY_AND_CREDITS": "版面設計及功能參考"
+  "INSPIRED_BY_AND_CREDITS": "版面設計及功能參考",
+  "ACCUMULATED_RAINFALL": "昨日累積雨量",
+  "MILLIMETER": "毫米"
 }

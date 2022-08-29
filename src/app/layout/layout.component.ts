@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+
+import { ReservoirRealTimeInfos } from '../models/GetAdditionalData.model';
 import { ReservoirService } from '../services/reservoir.service';
 import { SessionStorageService } from '../services/session-storage.service';
+
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-layout',
@@ -30,8 +34,14 @@ export class LayoutComponent implements OnInit {
   }
 
   private processFetchReservoirProcess(): void {
-    this.reservoirService.getReservoirDetail().subscribe(response => {
-      this.reservoirService.cleanAndStoreReservoirData(response);
+    forkJoin([
+      this.reservoirService.getReservoirDetail(),
+      this.reservoirService.getReservoirAdditionalData(),
+    ]).subscribe(([detail, additional]) => {
+      const additionalInfos = ([] as ReservoirRealTimeInfos[]).concat(
+        ...additional.map(item => item.ReservoirRealTimeInfos)
+      );
+      this.reservoirService.cleanAndStoreReservoirData(detail, additionalInfos);
       this.isOverlayActive = false;
     });
   }

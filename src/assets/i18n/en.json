@@ -14,5 +14,7 @@
   "TEN_THOUSAND": "ten thousand meters^3",
   "RESERVOIR_INTRODUCTION": "Reservoir Introduction",
   "LOCATION_OF_RESERVOIR": "Location of Reservoir",
-  "INSPIRED_BY_AND_CREDITS": "Inspired and Credits"
+  "INSPIRED_BY_AND_CREDITS": "Inspired and Credits",
+  "ACCUMULATED_RAINFALL": "Accumulated Rainfall",
+  "MILLIMETER": "mm"
 }

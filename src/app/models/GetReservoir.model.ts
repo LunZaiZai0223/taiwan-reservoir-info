@@ -12,4 +12,5 @@ export interface GetReservoir {
   area?: string; // 地區
   pureTime?: string; // 整理好的時間（從 yyyy-mm-dd(X時) 變成 yyyy-mm-dd hh:ss）
   nameEn?: string;
+  accumulatedRainfall?: number; // 今日累積降雨量[mm]
 }
