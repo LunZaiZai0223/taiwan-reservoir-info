@@ -34,3 +34,7 @@
 
   <app-reservoir-description [reservoirName]="reservoirDetail.name"></app-reservoir-description>
 </ng-container>
+
+<ng-container *ngIf="canShowNotFound">
+  <app-noting-found></app-noting-found>
+</ng-container>

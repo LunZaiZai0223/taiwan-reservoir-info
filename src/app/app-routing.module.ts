@@ -19,6 +19,11 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({

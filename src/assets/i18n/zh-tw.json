@@ -1,5 +1,4 @@
 {
-  "test": "你好啊",
   "NAV_TITLE": "臺灣水庫資訊",
   "NORTHERN_TW": "北部",
   "MIDDLE_TW": "中部",
@@ -16,5 +15,6 @@
   "LOCATION_OF_RESERVOIR": "水庫位置圖",
   "INSPIRED_BY_AND_CREDITS": "版面設計及功能參考",
   "ACCUMULATED_RAINFALL": "昨日累積雨量",
-  "MILLIMETER": "毫米"
+  "MILLIMETER": "毫米",
+  "NOT_FOUND": "抱歉，該頁面不存在。"
 }

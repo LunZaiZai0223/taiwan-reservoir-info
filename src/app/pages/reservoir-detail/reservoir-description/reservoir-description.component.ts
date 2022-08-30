@@ -12,7 +12,7 @@ import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./reservoir-description.component.scss'],
 })
 export class ReservoirDescriptionComponent implements OnInit, OnDestroy {
-  @Input() reservoirName: string = '';
+  @Input() reservoirName: string | undefined = '';
   @ViewChild('skeletonWrapper', { static: true }) skeletonWrapperEle!: ElementRef<HTMLElement>;
 
   isSkeletonActive: boolean = true;
@@ -29,15 +29,19 @@ export class ReservoirDescriptionComponent implements OnInit, OnDestroy {
       item => item.id === this.route.snapshot.params['reservoirId']
     )!;
 
-    this.reservoirViewName =
-      this.currentLang === 'zh-tw' ? this.reservoirName : RESERVOIR_TW_EN_NAME_LIST[this.reservoirName];
+    if (this.reservoirName) {
+      this.reservoirViewName =
+        this.currentLang === 'zh-tw' ? this.reservoirName : RESERVOIR_TW_EN_NAME_LIST[this.reservoirName];
+    }
 
     this.subscription = this.translate.onLangChange.subscribe((langEvent: LangChangeEvent) => {
       this.currentLang = langEvent.lang;
       if (this.currentLang === 'zh-tw') {
-        this.reservoirViewName = this.reservoirName;
+        this.reservoirViewName = this.reservoirName ?? '';
       } else {
-        this.reservoirViewName = RESERVOIR_TW_EN_NAME_LIST[this.reservoirName];
+        if (this.reservoirName) {
+          this.reservoirViewName = RESERVOIR_TW_EN_NAME_LIST[this.reservoirName];
+        }
       }
     });
   }

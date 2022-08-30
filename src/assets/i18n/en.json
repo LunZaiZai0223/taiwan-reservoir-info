@@ -1,5 +1,4 @@
 {
-  "test": "你好啊",
   "NAV_TITLE": "Main Reservoirs of Taiwan",
   "NORTHERN_TW": "Northern Taiwan",
   "MIDDLE_TW": "Middle Taiwan",
@@ -16,5 +15,6 @@
   "LOCATION_OF_RESERVOIR": "Location of Reservoir",
   "INSPIRED_BY_AND_CREDITS": "Inspired and Credits",
   "ACCUMULATED_RAINFALL": "Accumulated Rainfall",
-  "MILLIMETER": "mm"
+  "MILLIMETER": "mm",
+  "NOT_FOUND": "Sorry! The page you are looking for is not available."
 }

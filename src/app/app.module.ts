@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserModule, Title } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -17,6 +17,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
 import { ReservoirDetailComponent } from './pages/reservoir-detail/reservoir-detail.component';
 import { ReservoirDescriptionComponent } from './pages/reservoir-detail/reservoir-description/reservoir-description.component';
 import { OverlayComponent } from './components/overlay/overlay.component';
+import { ErrorInterceptor } from './interceptors/error.interceptor';
+import { NotingFoundComponent } from './components/noting-found/noting-found.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -34,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReservoirDetailComponent,
     ReservoirDescriptionComponent,
     OverlayComponent,
+    NotingFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

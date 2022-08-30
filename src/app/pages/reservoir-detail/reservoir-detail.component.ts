@@ -13,6 +13,7 @@ import { RESERVOIR_TW_EN_NAME_LIST } from '../../constant/reservoir/reservoir-tw
 })
 export class ReservoirDetailComponent implements OnInit, OnDestroy {
   canShow: boolean = false;
+  canShowNotFound: boolean = false;
   reservoirDetail: GetReservoir = {} as GetReservoir;
   currentLang: string = '';
   subscription: Subscription = new Subscription();
@@ -32,12 +33,17 @@ export class ReservoirDetailComponent implements OnInit, OnDestroy {
         tap((data: any) => {
           // 避免 BehaviorSubject 的初始值 null
           if (data) {
-            this.reservoirDetail = this.reservoirService.getReservoirItemById(
-              this.route.snapshot.params['reservoirId']
-            )!;
-            this.reservoirDetail.nameEn = RESERVOIR_TW_EN_NAME_LIST[this.reservoirDetail.name];
-            if (this.reservoirDetail) {
+            this.reservoirDetail =
+              // 如果找不到就洗成 {}
+              this.reservoirService.getReservoirItemById(this.route.snapshot.params['reservoirId']) ??
+              ({} as GetReservoir);
+            // 因為資料都是從 layout 打完取得的，然後再從 id 拉到正確的資料，防止錯誤的 id
+            // 造成拉不到資料爆炸
+            if (Object.keys(this.reservoirDetail).length !== 0) {
+              this.reservoirDetail.nameEn = RESERVOIR_TW_EN_NAME_LIST[this.reservoirDetail.name];
               this.canShow = true;
+            } else {
+              this.canShowNotFound = true;
             }
           }
         })
