@@ -1,0 +1,20 @@
+{
+  "NAV_TITLE": "臺灣水庫資訊",
+  "NORTHERN_TW": "北部",
+  "MIDDLE_TW": "中部",
+  "SOUTHERN_TW": "南部",
+  "NEWEST_INFO": "最新資料",
+  "LAST_UPDATE" : "上次更新",
+  "DAILY_INFLOW": "今日進水量",
+  "DAILY_OUTFLOW": "今日出水量",
+  "EFFECTIVE_CAPACITY": "有效容量",
+  "CURRENT_STORAGE_CAPACITY": "當前有效蓄水量",
+  "CURRENT_STORAGE_CAPACITY_PERCENTAGE": "當前有效蓄水量百分比",
+  "TEN_THOUSAND": "萬立方公尺",
+  "RESERVOIR_INTRODUCTION": "水庫簡介",
+  "LOCATION_OF_RESERVOIR": "水庫位置圖",
+  "INSPIRED_BY_AND_CREDITS": "版面設計及功能參考",
+  "ACCUMULATED_RAINFALL": "昨日累積雨量",
+  "MILLIMETER": "毫米",
+  "NOT_FOUND": "抱歉，該頁面不存在。"
+}

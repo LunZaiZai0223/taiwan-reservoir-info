@@ -1,0 +1,20 @@
+{
+  "NAV_TITLE": "Main Reservoirs of Taiwan",
+  "NORTHERN_TW": "Northern Taiwan",
+  "MIDDLE_TW": "Middle Taiwan",
+  "SOUTHERN_TW": "Southern Taiwan",
+  "NEWEST_INFO": "Newest Info",
+  "LAST_UPDATE": "Last Update",
+  "DAILY_INFLOW": "Daily Inflow",
+  "DAILY_OUTFLOW": "Daily Outflow",
+  "EFFECTIVE_CAPACITY": "Effective Capacity",
+  "CURRENT_STORAGE_CAPACITY": "Current Storage Capacity",
+  "CURRENT_STORAGE_CAPACITY_PERCENTAGE": "Current Storage Capacity Percentage",
+  "TEN_THOUSAND": "ten thousand meters^3",
+  "RESERVOIR_INTRODUCTION": "Reservoir Introduction",
+  "LOCATION_OF_RESERVOIR": "Location of Reservoir",
+  "INSPIRED_BY_AND_CREDITS": "Inspired and Credits",
+  "ACCUMULATED_RAINFALL": "Accumulated Rainfall",
+  "MILLIMETER": "mm",
+  "NOT_FOUND": "Sorry! The page you are looking for is not available."
+}
