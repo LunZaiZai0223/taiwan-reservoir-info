@@ -3,6 +3,7 @@
   <div class="content-wrapper skeleton" #skeletonWrapper>
     <div class="location-image-wrapper">
       <img [src]="reservoirDetail.locationImgPath" (load)="onPageIsLoaded()" />
+      <!-- <img src="../../../../assets/location-imgs/日月潭水庫.png" (load)="onPageIsLoaded()" /> -->
       <div class="image-caption-wrapper">
         <ng-container *ngIf="!isSkeletonActive; else isLoading">
           <small>{{ 'LOCATION_OF_RESERVOIR' | translate }}</small>
