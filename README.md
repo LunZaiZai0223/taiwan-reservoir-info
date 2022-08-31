@@ -1,27 +1,26 @@
-# TaiwanReservoir
+# 臺灣水庫資訊 taiwan-reservoir-info 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+## About
 
-## Development server
+串接政府 Open Data API 取得水庫資訊，再搭配圖表及靜態檔案顯示特定水庫的資訊。除了顯示資訊之外，UI 有實作黑暗 / 明亮模式及 i18n 切換語系（繁中及英文）。
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Screenshot
 
-## Code scaffolding
+![](https://hackmd.io/_uploads/SytrtBnJj.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![](https://hackmd.io/_uploads/rk6BKrhkj.png)
 
-## Build
+![](https://hackmd.io/_uploads/HkzLKH21i.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![](https://hackmd.io/_uploads/ByHLYB2yi.png)
 
-## Running unit tests
+## Acknowledgements
+Thank you so much!
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- 此專案功能及畫面皆以大神的作品（[台灣即時水情](https://water.futa.gg/)）當作範例參考
+- [ng-apexcharts](https://github.com/apexcharts/ng-apexcharts)
+- [ngx-translate](https://github.com/ngx-translate/core)
 
-## Running end-to-end tests
+## Demo
+https://taiwan-reservoir-ffcec.web.app/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
